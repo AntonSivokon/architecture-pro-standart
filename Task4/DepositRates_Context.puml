@@ -1,0 +1,32 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+title Предоставление ставок кол-центрам
+left to right direction
+
+Person(backManager, "Менеджер бэк-офиса", "Ведёт депозитные ставки")
+Person(client, "Клиент банка", "Звонит, чтобы уточнить условия депозита")
+Person(bankOperator, "Оператор кол-центра банка", "Консультирует клиента по ставкам")
+Person(rateCoordinator, "Ответственный сотрудник банка", "Передаёт файл ставок партнёру")
+Person(partnerOperator, "Оператор партнёра", "Импортирует ставки и консультирует клиента")
+
+System_Boundary(bank, "Системы банка") {
+    System(abs, "АБС", "Источник ставок; менеджер ведёт ставки в текущем процессе")
+    System(depositService, "Сервис депозитных заявок", "Синхронизирует и хранит ставки, предоставляет read-only API и формирует файл")
+    System(callCenter, "CRM кол-центра банка", "Показывает операторам текущие ставки")
+}
+
+System_Ext(partnerCallCenter, "Система партнёрского кол-центра", "Внешняя система; загружает ставки из файла")
+
+Rel(backManager, abs, "Ведёт и подтверждает ставки")
+Rel(abs, depositService, "Передаёт ставки через существующий обработчик синхронизации")
+Rel(callCenter, depositService, "Запрашивает актуальные ставки по защищённому REST API")
+Rel(bankOperator, callCenter, "Просматривает ставки и время их актуальности")
+Rel(client, callCenter, "Звонит за консультацией по ставкам")
+Rel(bankOperator, client, "Объясняет условия депозита")
+Rel(depositService, rateCoordinator, "Предоставляет версионированный CSV для скачивания")
+Rel(rateCoordinator, partnerOperator, "Передаёт файл вручную по согласованному защищённому каналу")
+Rel(partnerOperator, partnerCallCenter, "Загружает файл через интерфейс партнёра")
+Rel(client, partnerCallCenter, "Звонит за консультацией при перенаправлении нагрузки")
+Rel(partnerOperator, client, "Объясняет условия депозита")
+
+@enduml

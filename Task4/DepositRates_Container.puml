@@ -1,0 +1,43 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+title Предоставление ставок кол-центрам
+left to right direction
+
+Person(backManager, "Менеджер бэк-офиса", "Ведёт ставки в АБС")
+Person(client, "Клиент банка", "Звонит, чтобы уточнить условия депозита")
+Person(bankOperator, "Оператор кол-центра банка", "Консультирует по текущим ставкам")
+Person(rateCoordinator, "Ответственный сотрудник банка", "Скачивает и передаёт партнёрский файл")
+Person(partnerOperator, "Оператор партнёра", "Импортирует полученный файл")
+
+System_Boundary(bank, "Системы банка") {
+    System(callCenter, "CRM кол-центра", "Показывает актуальные ставки оператору")
+
+    Container_Boundary(depositService, "Сервис депозитных заявок") {
+        Container(rateApi, "API ставок", "REST / .NET", "Read-only ставки для CRM и защищённое скачивание файла для ответственного сотрудника")
+        Container(rateSync, "Обработчик повторов и синхронизации", ".NET Worker Service", "Получает ставки из АБС, проверяет и обновляет кеш")
+        Container(rateStore, "Хранилище ставок", "MS SQL", "Проверенные ставки, версии и время последней синхронизации")
+        Container(rateExporter, "Экспорт ставок", ".NET Worker Service", "Формирует полный версионированный CSV-снимок")
+    }
+
+    System(absModule, "АБС", "Мастер-система ставок",)
+}
+
+System_Ext(partnerCallCenter, "Система партнёрского кол-центра", "Импорт ставок из файла; API-интеграция недоступна")
+
+Rel(backManager, absModule, "Ведёт и подтверждает ставки")
+Rel(absModule, rateSync, "Передаёт ставки через существующую интеграцию")
+Rel(rateSync, rateStore, "Сохраняет проверенные ставки и время синхронизации")
+Rel(callCenter, rateApi, "Запрашивает ставки и время актуальности по защищённому REST API")
+Rel(bankOperator, callCenter, "Просматривает ставки и предупреждения об актуальности")
+Rel(client, callCenter, "Звонит за консультацией по ставкам")
+Rel(rateApi, rateStore, "Читает актуальный снимок ставок")
+Rel(rateExporter, rateStore, "Читает проверенный снимок и версию")
+Rel(rateExporter, rateApi, "Публикует проверенный CSV-файл для скачивания")
+Rel(rateCoordinator, rateApi, "Скачивает файл с ролью и записью в аудите")
+Rel(rateCoordinator, partnerOperator, "Вручную передаёт файл по согласованному защищённому каналу")
+Rel(partnerOperator, partnerCallCenter, "Загружает файл через интерфейс партнёра")
+Rel(client, partnerCallCenter, "Звонит за консультацией при перенаправлении нагрузки")
+Rel(bankOperator, client, "Объясняет условия депозита")
+Rel(partnerOperator, client, "Объясняет условия депозита")
+
+@enduml
