@@ -1,0 +1,56 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+title Подача кредитной заявки онлайн
+left to right direction
+
+Person(client, "Клиент банка", "Подаёт заявку через цифровой канал")
+Person(frontManager, "Менеджер отделения", "Находит заявку и продолжает её после идентификации")
+Person(creditManager, "Менеджер кредитования", "Рассматривает заявку в Camunda")
+
+System_Boundary(bank, "Системы банка") {
+    Container(website, "Сайт банка", "PHP / React.js", "Принимает заявку нового клиента")
+    Container(internetBank, "Интернет-банк", "ASP.NET MVC / .NET Framework 4.5 / MS SQL", "Показывает условия и предодобренные предложения; подтверждает подачу СМС-кодом")
+
+    Container_Boundary(pipeline, "Кредитный конвейер") {
+        Container(onlineApi, "API кредитных заявок", "REST / Java", "Отдаёт условия и принимает заявки от сайта и интернет-банка; авторизация, проверка данных и идемпотентность")
+        Container(caseControl, "Управление заявкой", "Java", "Создаёт процесс Camunda, хранит внешний идентификатор, сопоставляет повторные запросы и связь с АБС")
+        Container(processEngine, "Процесс обработки кредита", "Camunda / Java", "Вызывает скоринг, управляет этапами обработки, назначает работу менеджерам и фиксирует решение")
+        ContainerDb(pipelineDb, "БД кредитного конвейера", "Oracle", "Заявки, процессы, ссылки на предодобренные предложения, статусы и аудит")
+        Container(notificationWorker, "Обработчик уведомлений", "Java Worker", "Публикует события статуса и инициирует СМС с защитой от дублей")
+    }
+
+    System(scoring, "Система кредитного скоринга", "Вычисляет оценку по конкретной заявке")
+    System(abs, "АБС", "Банковский учёт и операции по кредиту; сохраняет текущий пакетный обмен")
+    Container(smsGateway, "СМС-шлюз", "Интеграция банка с телеком-оператором", "Отправляет коды подтверждения и уведомления")
+}
+
+System_Ext(bureau, "Бюро кредитных историй", "Внешний источник кредитной истории по REST API")
+System_Ext(telecom, "Телеком-оператор", "Доставляет СМС")
+
+Rel_L(client, website, "Подаёт заявку")
+Rel(client, internetBank, "Выбирает предложение и подтверждает заявку")
+Rel(website, onlineApi, "Получает условия и передаёт заявку по защищённому REST")
+Rel(internetBank, onlineApi, "Получает условия/предложение и отправляет подтверждённую заявку")
+Rel(onlineApi, website, "Возвращает идентификатор, предварительный результат или статус ожидания")
+Rel(onlineApi, internetBank, "Возвращает условия, идентификатор и статус заявки")
+Rel(onlineApi, caseControl, "Проверяет входные данные и создаёт заявку")
+Rel(caseControl, pipelineDb, "Сохраняет заявку, ключ идемпотентности и корреляционные идентификаторы")
+Rel(caseControl, processEngine, "Запускает или продолжает процесс Camunda")
+Rel(caseControl, onlineApi, "Возвращает созданную заявку и результат, если он готов")
+Rel(processEngine, pipelineDb, "Сохраняет этапы процесса и решение")
+Rel(processEngine, scoring, "Запрашивает оценку только в рамках активной заявки")
+Rel(scoring, bureau, "Получает кредитную историю онлайн")
+Rel(bureau, scoring, "Возвращает данные БКИ")
+Rel(scoring, processEngine, "Возвращает результат оценки")
+Rel(creditManager, processEngine, "Рассматривает назначенные заявки и фиксирует решение")
+Rel(frontManager, onlineApi, "Ищет существующую заявку по идентификатору после идентификации клиента")
+Rel(frontManager, abs, "Оформляет или связывает запись клиента в АБС")
+Rel(abs, caseControl, "Передаёт записи отделений существующим суточным пакетом")
+Rel(caseControl, abs, "Передаёт финальные статусы существующим суточным пакетом")
+Rel(processEngine, notificationWorker, "Создаёт событие изменения статуса")
+Rel(notificationWorker, smsGateway, "Инициирует идемпотентное статусное СМС")
+Rel(internetBank, smsGateway, "Запрашивает СМС-код подтверждения")
+Rel(smsGateway, telecom, "Передаёт сообщение на доставку")
+Rel(telecom, client, "Доставляет код или уведомление")
+
+@enduml

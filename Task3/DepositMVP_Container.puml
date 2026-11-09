@@ -1,0 +1,62 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+title Диаграмма контейнеров для открытия депозитов онлайн (MVP)
+left to right direction
+
+Person(client, "Клиент", "Клиент или потенциальный клиент банка")
+Person(frontManager, "Менеджер отделения", "Идентифицирует нового клиента")
+Person(backManager, "Менеджер бэк-офиса", "Согласует условия и открывает депозит")
+
+System_Ext(telecomOperator, "Телеком-оператор", "Доставляет СМС")
+
+System_Boundary(bank, "Системы банка") {
+    Container(website, "Сайт", "PHP / React.js", "Показывает депозитные продукты и принимает лиды")
+    Container(smsGateway, "СМС-шлюз", "Интеграция банка с телеком-оператором", "Отправляет коды подтверждения и уведомления")
+
+    Container(callCenter, "CRM кол-центра", "React.js / Java Spring Boot / PostgreSQL", "Обработка лидов и обратных звонков; система подрядчика развёрнута в инфраструктуре банка")
+
+    System_Boundary(internetBank, "Интернет-банк") {
+        Container(ibApp, "Веб-приложение интернет-банка", "ASP.NET MVC / .NET Framework 4.5", "UI, бизнес-логика заявки и проверка кода подтверждения")
+        ContainerDb(ibDb, "БД интернет-банка", "MS SQL", "Данные приложения и операционные записи")
+    }
+
+    System_Boundary(depositFlow, "Сервис заявок на депозиты") {
+        Container(depositApi, "API депозитов", "REST API / .NET", "Каталог ставок, приём заявок, запрос статусов и интеграция с АБС")
+        Container(depositStore, "Хранилище заявок", "MS SQL", "Заявки, статусы, аудит, ключи идемпотентности, задания и кеш ставок")
+        Container(retryHandler, "Обработчик повторов", ".NET Worker Service", "Обрабатывает сохранённые задания и повторяет временно неуспешные интеграции")
+    }
+
+    System_Boundary(coreBanking, "АБС") {
+        Container(absDesktop, "Десктоп-клиент АБС", "Delphi", "Интерфейс для отделений и бэк-офиса")
+        Container(absModule, "Модуль обработки депозитов", "PL/SQL", "Управление ставками, согласование условий и открытие депозита")
+        ContainerDb(absDb, "БД АБС", "Oracle", "Ставки, счета, договоры и финансовые данные")
+    }
+}
+
+Rel(client, website, "Просматривает предложения и оставляет лид")
+Rel(website, depositApi, "Запрашивает каталог депозитов и актуальные ставки")
+Rel(website, callCenter, "Передаёт данные лида для обратного звонка")
+Rel(callCenter, client, "Звонит и обсуждает условия")
+
+Rel(client, ibApp, "Выбирает депозит, подаёт заявку и смотрит её статус")
+Rel(ibApp, ibDb, "Хранит локальные данные")
+Rel(ibApp, smsGateway, "Запрашивает отправку кода подтверждения")
+Rel(ibApp, depositApi, "Запрашивает ставки и статусы; передаёт заявку и результат проверки кода")
+
+Rel(depositApi, depositStore, "Читает ставки; сохраняет заявку, статус и ключ идемпотентности")
+Rel(depositApi, retryHandler, "Создаёт задания обработки заявок и обновления ставок")
+Rel(retryHandler, depositStore, "Получает задания и сохраняет результаты и синхронизированные ставки")
+Rel(retryHandler, absModule, "Передаёт заявки и синхронизирует ставки; повторяет запросы")
+Rel(absModule, retryHandler, "Возвращает ставки и результаты согласования и открытия")
+Rel(retryHandler, depositApi, "Передаёт обновлённые статусы для ответа клиенту и уведомлений")
+Rel(depositApi, smsGateway, "Инициирует уведомления после согласования ставки и открытия")
+
+Rel(backManager, absDesktop, "Ведёт ставки, согласует условия и инициирует открытие")
+Rel(frontManager, absDesktop, "Фиксирует результат личной идентификации")
+Rel(absDesktop, absModule, "Передаёт действия сотрудников")
+Rel(absModule, absDb, "Читает и записывает банковские данные")
+Rel_L(smsGateway, telecomOperator, "Передаёт СМС на доставку")
+Rel_R(telecomOperator, client, "Доставляет код подтверждения и уведомления")
+Rel(client, frontManager, "После обращения с сайта лично проходит идентификацию перед открытием")
+
+@enduml

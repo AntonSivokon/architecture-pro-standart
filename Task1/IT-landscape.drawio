@@ -1,0 +1,211 @@
+<mxfile host="drawio-plugin" modified="2026-11-03T11:44:05.731Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" etag="AGea5KsQ_Ih_lnFohNSu" version="22.1.22" type="embed">
+  <diagram id="it-landscape-table" name="Карта IT-ландшафта">
+    <mxGraphModel dx="1891" dy="2016" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Текущий IT-ландшафт банка «Стандарт»&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=none;strokeColor=none;fontSize=24;fontStyle=1;fontColor=#1F2937;" parent="1" vertex="1">
+          <mxGeometry x="20" y="20" width="2140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="corner" value="Подразделение / бизнес-возможность" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="20" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cap1" value="Продажи в сети отделений" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f4e78;strokeColor=#ffffff;fontSize=15;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="320" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cap2" value="Продажи через кол-центр" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f4e78;strokeColor=#ffffff;fontSize=15;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cap3" value="Digital-оповещения клиентов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f4e78;strokeColor=#ffffff;fontSize=15;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="620" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cap4" value="Обслуживание депозитных процессов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f4e78;strokeColor=#ffffff;fontSize=15;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="920" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cap5" value="Обслуживание кредитных процессов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f4e78;strokeColor=#ffffff;fontSize=15;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cap6" value="Управление договорами" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f4e78;strokeColor=#ffffff;fontSize=15;fontStyle=1;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="80" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="row_it" value="Управление IT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="row_branch" value="Управление обслуживанием в сети отделений" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="row_deposit" value="Управление обслуживанием депозитных продуктов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="row_credit" value="Управление обслуживанием кредитных продуктов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="row_bank_cc" value="Кол-центр банка «Стандарт»" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="row_partner_cc" value="Партнёрский кол-центр" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="row_digital" value="Команда цифровой трансформации розничного бизнеса" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d9e2f3;strokeColor=#ffffff;fontSize=14;fontStyle=1;fontColor=#1f2937;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="20" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="it_deposit_abs" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="it_credit_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;verticalAlign=middle;spacing=6;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="it_contract_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_2_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_2_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_3_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_3_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_3_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_3_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_3_6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_4_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_4_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_4_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="credit_deposit_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="credit_contract_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_5_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_5_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_5_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_5_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_5_6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_6_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_6_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_6_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_6_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_6_6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_7_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_7_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_7_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_7_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_7_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="blank_7_6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="1110" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cc_it" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="digital_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="deposit_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="510" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="credit_systems" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="660" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cc_system" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="partner_cc_system" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;spacing=8;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="960" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="210" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="360" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;АБС&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=none;opacity=90;" parent="1" vertex="1">
+          <mxGeometry x="330" y="220" width="1480" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Телеком оператор&lt;br&gt;СМС шлюз&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=90;" parent="1" vertex="1">
+          <mxGeometry x="630" y="230" width="280" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Система кол-центра&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1830" y="820" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Система партнерского кол-центра&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1830" y="970" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Кредитный конвейер&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1230" y="240" width="130" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Система кредитного скоринга&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1380" y="240" width="130" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Бюро кредитных историй&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=12;align=center;verticalAlign=middle;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1232.5" y="460" width="275" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Сайт&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="650" y="240" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Интернет банк&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="770" y="240" width="440" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;span style=&quot;font-family: &amp;quot;YS Text&amp;quot;, sans-serif; text-align: start; background-color: rgba(255, 255, 255, 0.06);&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;На момент составления карты команда цифровой трансформации сформирована (10 человек), но процессы трансформации ещё не запущены&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000033;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="330" y="1150" width="1780" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
